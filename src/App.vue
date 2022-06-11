@@ -1,32 +1,54 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="app">
+    <v-container class="app container--fluid">
+      <v-row id="nav" align="center" class="ml-10 mr-10">
+        <v-col cols="8" sm="4" md="2">
+          <router-link  to="/">Who Am I?</router-link> |
+        </v-col>
+        <v-col cols="4" sm="4" md="2">
+          <router-link  to="/projects">Projects</router-link>
+        </v-col>
+        <v-col cols="12" sm="4" md="8" align="end" class="white--text text-h6 d-none d-sm-inline">
+          Jemuel Flores
+        </v-col>
+
+
+      </v-row>
+      <router-view/>
+    </v-container>
+  </v-app>
 </template>
-
+<script>
+export default {
+  mounted() {
+    this.styleActive()
+  },
+  data(){
+    return{
+      activeTab: 0
+    }
+  },
+  methods:{
+    styleActive(){
+      console.log(this.activeTab)
+    }
+  }
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
+#app{
+  background: black;
 }
-
-#nav a {
+#nav a{
   font-weight: bold;
-  color: #2c3e50;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
 }
-
 #nav a.router-link-exact-active {
-  color: #42b983;
+  text-decoration: underline;
+  text-decoration-color: #F19100;
+  text-decoration-thickness: 3px;
 }
 </style>
