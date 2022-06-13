@@ -5,9 +5,7 @@
       height="600"
       cycle
       interval="3000"
-      progress
-      progress-color="orange100"
-      show-arrows-on-hover>
+      show-arrows>
         <v-carousel-item
         v-for="(item,index) in this.projects"
         :key="index"

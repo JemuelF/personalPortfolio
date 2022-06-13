@@ -16,10 +16,21 @@
               block
               color="black"
               elevation="4"
-              class="white--text text-caption text-sm-subtitle-2"
+              class="white--text text-caption text-sm-caption"
               :href=this.code
               target="_blank"
+              v-if="this.code===''"
+              disabled
               >Code</v-btn>
+            <v-btn
+                block
+                color="black"
+                elevation="4"
+                class="white--text text-caption text-sm-subtitle-2"
+                :href=this.code
+                target="_blank"
+                v-else
+            >Code</v-btn>
           </v-col>
           <v-col cols="6" align="center" class="pl-xs-0 pr-xs-0">
             <v-btn
@@ -29,6 +40,17 @@
                 class="white--text text-caption text-sm-subtitle-2 "
                 :href=this.website
                 target="_blank"
+                v-if="this.website===''"
+                disabled
+            >Website</v-btn>
+            <v-btn
+                block
+                color="black"
+                elevation="4"
+                class="white--text text-caption text-sm-subtitle-2 "
+                :href=this.website
+                target="_blank"
+                v-else
             >Website</v-btn>
           </v-col>
         </v-row>
